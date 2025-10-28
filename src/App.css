@@ -1,0 +1,135 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* === Custom Gradient Background + Circles === */
+.login-bg {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #2B0B69, #1B0F77, #091E86);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Floating blurred circles */
+.login-bg::before,
+.login-bg::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.login-bg::before {
+  width: 250px;
+  height: 250px;
+  background: #3b82f6; /* blue tone */
+  top: 15%;
+  left: 25%;
+}
+
+.login-bg::after {
+  width: 400px;
+  height: 400px;
+  background: #8b5cf6; /* purple tone */
+  bottom: 10%;
+  right: 20%;
+}
+
+.login-box {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6); /* transparent black glass */
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 400px;
+}
+
+/* === Admin Login Background Gradient and Circles === */
+.bg-gradient-admin {
+  background: linear-gradient(to bottom right, #2B0B69, #1B0F77, #091E86);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.circle1 {
+  width: 160px;
+  height: 160px;
+  background: #6E4BFF;
+  opacity: 0.4;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.circle2 {
+  width: 280px;
+  height: 280px;
+  background: #4E36E8;
+  opacity: 0.3;
+  top: 30%;
+  left: 25%;
+}
+
+.circle3 {
+  width: 400px;
+  height: 400px;
+  background: #3B23C3;
+  opacity: 0.25;
+  bottom: 10%;
+  right: 25%;
+}
