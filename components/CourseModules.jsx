@@ -1,95 +1,118 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import {
+  FaRocket,
+  FaBrain,
+  FaFlask,
+  FaChartLine,
+  FaLightbulb,
+  FaRobot,
+} from "react-icons/fa";
 
-// Data structure for the course modules
-const courseModules = [
-  {
-    title: 'Welcome to Your Journey',
-    status: '20% Complete',
-    progress: 20, 
-  },
-  {
-    title: 'Mastering Generative AI and Advanced Prompting',
-    status: 'Not Started',
-    progress: 0,
-  },
-  {
-    title: 'AI for Research, Learning, and Content Creation',
-    status: 'Not Started',
-    progress: 0,
-  },
-  {
-    title: 'Data to Decision : AI-Driven Analytics and Reporting',
-    status: 'Not Started',
-    progress: 0,
-  },
-  {
-    title: 'AI-Powered Problem-Solving, Brainstorming, and Prototyping',
-    status: 'Not Started',
-    progress: 0,
-  },
-  {
-    title: 'Understanding AI Agents',
-    status: 'Not Started',
-    progress: 0,
-  },
-];
-
-// Helper Component for the individual module card
-const ModuleCard = ({ module }) => {
-  const isStarted = module.progress > 0;
-
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col justify-between h-full">
-      {/* Title and Status/Progress Area */}
-      <div>
-        <h3 className="text-lg font-semibold mb-3 text-gray-800">{module.title}</h3>
-
-        {/* Status and Progress Bar */}
-        {isStarted ? (
-          <>
-            {/* Progress Bar Container */}
-            <div className="w-full bg-gray-200 rounded-full h-1.5 mb-2">
-              {/* Progress Bar Fill */}
-              <div 
-                className="bg-blue-600 h-1.5 rounded-full" 
-                style={{ width: `${module.progress}%` }}
-              ></div>
-            </div>
-            {/* Status Text */}
-            <p className="text-sm font-medium text-blue-600 mb-4">{module.status}</p>
-          </>
-        ) : (
-          /* 'Not Started' Status (Uses a fixed height to align content vertically across cards) */
-          <p className="text-sm font-medium text-gray-500 mb-4 h-[30px] flex items-center">{module.status}</p>
-        )}
-      </div>
-      
-      {/* View Details Button with hover effect */}
-      <button className="w-full py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out 
-                         bg-white border-2 border-gray-200 text-gray-600 
-                         hover:bg-blue-400 hover:text-white hover:border-transparent">
-        View Details
-      </button>
-    </div>
-  );
-};
-
-// Main Course Modules Component
 const CourseModules = () => {
-  return (
-    // Outer container for background and centering
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        
-        {/* Header */}
-        <h1 className="text-3xl font-bold text-gray-900 text-center mb-10">
-          Course Modules
-        </h1>
+  const navigate = useNavigate();
 
-        {/* Modules Grid (Responsive 3-column layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courseModules.map((module, index) => (
-            <ModuleCard key={index} module={module} />
+  const courseModules = [
+    {
+      id: 1,
+      title: "Mastering Generative AI and Advanced Prompting",
+      progress: 20,
+      status: "20% Complete",
+      icon: <FaBrain className="text-purple-500 text-2xl" />,
+    },
+    {
+      id: 2,
+      title: "AI for Research, Learning, and Content Creation",
+      progress: 0,
+      status: "Not Started",
+      icon: <FaFlask className="text-pink-500 text-2xl" />,
+    },
+    {
+      id: 3,
+      title: "Data to Decision : AI-Driven Analytics and Reporting",
+      progress: 0,
+      status: "Not Started",
+      icon: <FaChartLine className="text-green-500 text-2xl" />,
+    },
+    {
+      id: 4,
+      title: "AI-Powered Problem-Solving, Brainstorming, and Prototyping",
+      progress: 0,
+      status: "Not Started",
+      icon: <FaLightbulb className="text-yellow-500 text-2xl" />,
+    },
+    {
+      id: 5,
+      title: "Understanding AI Agents",
+      progress: 0,
+      status: "Not Started",
+      icon: <FaRobot className="text-indigo-500 text-2xl" />,
+    },
+  ];
+
+  const handleViewDetails = (moduleId) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/modules", { state: { activeModuleId: moduleId } });
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
+            Course <span className="text-blue-600">Modules</span>
+          </h1>
+        </div>
+
+        {/* Smaller, tighter cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {courseModules.map((module) => (
+            <motion.div
+              key={module.id}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/70 backdrop-blur-xl rounded-xl shadow-md p-5 border border-gray-100 flex flex-col justify-between hover:shadow-lg hover:border-blue-300 transition"
+            >
+              <div>
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="p-2.5 bg-white/70 rounded-lg shadow-sm">
+                    {module.icon}
+                  </div>
+                  <h3 className="text-base font-semibold text-gray-800 leading-snug">
+                    {module.title}
+                  </h3>
+                </div>
+
+                {module.progress > 0 ? (
+                  <>
+                    <div className="w-full bg-gray-200 rounded-full h-1.5 mb-1 overflow-hidden">
+                      <div
+                        className="h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-700"
+                        style={{ width: `${module.progress}%` }}
+                      ></div>
+                    </div>
+                    <p className="text-xs font-medium text-blue-600 mb-3">
+                      {module.status}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-xs font-medium text-gray-400 mb-4">
+                    Not Started
+                  </p>
+                )}
+              </div>
+
+              <button
+                onClick={() => handleViewDetails(module.id)}
+                className="w-full py-2 rounded-md text-xs font-semibold 
+                           bg-gradient-to-r from-blue-500 to-blue-600 text-white
+                           hover:from-blue-600 hover:to-blue-700 
+                           transition duration-200 ease-in-out shadow-sm hover:shadow-md"
+              >
+                View Details
+              </button>
+            </motion.div>
           ))}
         </div>
       </div>
