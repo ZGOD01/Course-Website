@@ -1,4 +1,5 @@
 // src/utils/images.js
+
 import module1 from "../assets/submodule1.jpg";
 import submodule2 from "../assets/submodule2.jpg";
 import submodule3 from "../assets/submodule3.jpg";
@@ -13,6 +14,10 @@ import submodule8 from "../assets/submodule8.jpg";
 import submodule9 from "../assets/submodule9.jpg";
 import submodule10_1 from "../assets/submodule10.1.jpg";
 import submodule10_2 from "../assets/submodule10.2.jpg";
+
+// ✅ New Module 2 image
+import module2 from "../assets/module2.0.jpg"; 
+import module2_1 from "../assets/module2.1.jpg"; 
 
 export {
   module1,
@@ -29,4 +34,6 @@ export {
   submodule9,
   submodule10_1,
   submodule10_2,
+  module2, 
+  module2_1,
 };

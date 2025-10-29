@@ -5,7 +5,7 @@ import { module1 } from "../../utils/images";
 
 const Module1_0 = ({ currentModule }) => {
   return (
-    <div id="submodule-content-1.0" className="bg-white p-8 rounded-lg shadow-xl">
+    <div id="submodule-content-1.0" className="bg-white p-8 rounded-lg ">
       <h1 className="text-4xl font-extrabold text-black leading-tight font-serif">
         {currentModule.headline}
       </h1>

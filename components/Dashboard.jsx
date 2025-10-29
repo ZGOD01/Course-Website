@@ -6,7 +6,7 @@ import heroImg from "../src/assets/course-img.png";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-hidden">
       <CourseNavbar />
       <HeroSection heroImg={heroImg} />
       <LearnSection />

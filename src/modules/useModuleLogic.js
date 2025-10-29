@@ -28,6 +28,23 @@ export default function useModuleLogic() {
       { id: "1.10", title: "Activity 1: AI Product Description Challenge" },
       { id: "1.11", title: "Activity 2: Social Media Caption Generator" },
     ],
+    2: [
+      { id: "2.0", title: "AI for Productivity: Module Overview" },
+      { id: "2.1", title: "AI for Research and Content: Save Time and Effort" },
+      { id: "2.2", title: "Using AI for Text Summarization: Techniques and Best Practice" },
+      { id: "2.3", title: "AI for Smarter Writing: Powering Up Word Docs" },
+      { id: "2.4", title: "Activity 1: Advanced Summarization" },
+      { id: "2.5", title: "Supercharge Your Learning with AI: Simplify Complex Topics" },
+      { id: "2.6", title: "AI for Active Learning: Practice, Apply, and Master" },
+      { id: "2.7", title: "AI for Content Creators: Crafting Perfect Texts" },
+      { id: "2.8", title: "AI-Powered Marketing: Unlock the Best Prompts" },
+      { id: "2.9", title: "AI for Voice-Overs: ElevenLabs in Action" },
+      { id: "2.10", title: "Advanced AI Image Creation: Perfecting Prompts" },
+      { id: "2.11", title: "AI Image Generation: Exploring Midjourney" },
+      { id: "2.12", title: "AI Video Creation: Step into Sora" },
+      { id: "2.13", title: "AI Video Editing: Inside Runway ML" },
+      { id: "2.14", title: "Activity 2: Generating and Editing Blog Content" },
+    ],
   };
 
   const moduleData = {
@@ -37,7 +54,12 @@ export default function useModuleLogic() {
         "Dive into the foundational theories and cutting-edge techniques behind modern generative artificial intelligence.",
       imageAlt: "Generative AI Concept",
     },
-    2: { headline: "AI for Research, Learning, and Content Creation" },
+    2: {
+      headline: "AI for Research, Learning, and Content Creation",
+      description:
+        "Harness the power of AI tools to enhance research, streamline learning, and boost creativity in content production.",
+      imageAlt: "AI for Research and Creativity",
+    },
     3: { headline: "Data to Decision: AI-Driven Analytics and Reporting" },
     4: { headline: "AI-Powered Problem-Solving, Brainstorming, and Prototyping" },
     5: { headline: "Understanding AI Agents" },
@@ -45,9 +67,9 @@ export default function useModuleLogic() {
 
   const currentModule = moduleData[activeModuleId] || moduleData[1];
 
-  // Intersection Observer
+  // Intersection Observer to track which submodule is visible
   useEffect(() => {
-    if (activeModuleId !== 1 || !mainContentRef.current) return;
+    if (!mainContentRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {

@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
-  FaRocket,
   FaBrain,
   FaFlask,
   FaChartLine,
@@ -30,7 +29,7 @@ const CourseModules = () => {
     },
     {
       id: 3,
-      title: "Data to Decision : AI-Driven Analytics and Reporting",
+      title: "Data to Decision: AI-Driven Analytics and Reporting",
       progress: 0,
       status: "Not Started",
       icon: <FaChartLine className="text-green-500 text-2xl" />,
@@ -57,7 +56,7 @@ const CourseModules = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100 py-12 px-3 sm:px-4 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
@@ -65,14 +64,14 @@ const CourseModules = () => {
           </h1>
         </div>
 
-        {/* Smaller, tighter cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-hidden">
           {courseModules.map((module) => (
             <motion.div
               key={module.id}
               whileHover={{ y: -6, scale: 1.02 }}
               transition={{ duration: 0.3 }}
               className="bg-white/70 backdrop-blur-xl rounded-xl shadow-md p-5 border border-gray-100 flex flex-col justify-between hover:shadow-lg hover:border-blue-300 transition"
+              style={{ overflow: "hidden" }}
             >
               <div>
                 <div className="flex items-center space-x-3 mb-3">
@@ -105,10 +104,7 @@ const CourseModules = () => {
 
               <button
                 onClick={() => handleViewDetails(module.id)}
-                className="w-full py-2 rounded-md text-xs font-semibold 
-                           bg-gradient-to-r from-blue-500 to-blue-600 text-white
-                           hover:from-blue-600 hover:to-blue-700 
-                           transition duration-200 ease-in-out shadow-sm hover:shadow-md"
+                className="w-full py-2 rounded-md text-xs font-semibold bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 transition duration-200 ease-in-out shadow-sm hover:shadow-md"
               >
                 View Details
               </button>

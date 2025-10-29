@@ -1,9 +1,22 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* === ROOT AND GLOBAL === */
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
   text-align: center;
+  scroll-behavior: smooth;
 }
 
+/* Global box sizing fix */
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* === LOGO ANIMATIONS (from Vite default) === */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,8 +53,7 @@
   color: #888;
 }
 
-
-/* === Custom Gradient Background + Circles === */
+/* === LOGIN PAGE STYLING === */
 .login-bg {
   position: relative;
   min-height: 100vh;
@@ -91,7 +103,7 @@
   max-width: 400px;
 }
 
-/* === Admin Login Background Gradient and Circles === */
+/* === ADMIN LOGIN BACKGROUND === */
 .bg-gradient-admin {
   background: linear-gradient(to bottom right, #2B0B69, #1B0F77, #091E86);
   position: relative;
@@ -132,4 +144,49 @@
   opacity: 0.25;
   bottom: 10%;
   right: 25%;
+}
+
+/* === MOBILE FIXES === */
+
+/* Prevent horizontal scroll on small screens */
+section, nav, div {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Adjust hero image and paddings on mobile */
+@media (max-width: 640px) {
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .px-10, .md\:px-20, .lg\:px-16 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* === SAFETY WRAPPERS === */
+
+/* Make sure main containers never overflow */
+.App, .Dashboard, .HeroSection, .LearnSection {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent grid gaps from causing tiny overflows */
+.grid {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tailwind shadow/glow safety */
+.shadow-md, .shadow-lg {
+  overflow: hidden;
+  border-radius: inherit;
 }
