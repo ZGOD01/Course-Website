@@ -16,8 +16,17 @@ import submodule10_1 from "../assets/submodule10.1.jpg";
 import submodule10_2 from "../assets/submodule10.2.jpg";
 
 // ✅ New Module 2 image
-import module2 from "../assets/module2.0.jpg"; 
-import module2_1 from "../assets/module2.1.jpg"; 
+import module2 from "../assets/module2.0.jpg";
+import module2_1 from "../assets/module2.1.jpg";
+import module2_2 from "../assets/module2.2.jpg";
+import module2_3_1 from "../assets/module2.3.1.jpg";
+import module2_3_2 from "../assets/module2.3.2.jpg";
+import module2_4 from "../assets/module2.4.jpg";
+import module2_5 from "../assets/module2.5.jpg";
+import module2_6 from "../assets/module2.6.jpg";
+import module2_7 from "../assets/module2.7.jpg";
+import module2_8 from "../assets/module2.8.jpg";
+import module2_9 from "../assets/module2.9.jpg";
 
 export {
   module1,
@@ -34,6 +43,15 @@ export {
   submodule9,
   submodule10_1,
   submodule10_2,
-  module2, 
+  module2,
   module2_1,
+  module2_2,
+  module2_3_1,
+  module2_3_2,
+  module2_4,
+  module2_5,
+  module2_6,
+  module2_7,
+  module2_8,
+  module2_9,
 };

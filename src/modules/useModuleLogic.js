@@ -1,10 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function useModuleLogic() {
-  const [activeModuleId, setActiveModuleId] = useState(1);
-  const [activeSubmoduleId, setActiveSubmoduleId] = useState("1.0");
+  // ✅ Load active module & submodule from localStorage (if available)
+  const [activeModuleId, setActiveModuleId] = useState(() => {
+    const savedModule = localStorage.getItem("activeModuleId");
+    return savedModule ? parseInt(savedModule, 10) : 1;
+  });
+
+  const [activeSubmoduleId, setActiveSubmoduleId] = useState(() => {
+    return localStorage.getItem("activeSubmoduleId") || "1.0";
+  });
+
   const mainContentRef = useRef(null);
 
+  // === Course Module List ===
   const courseModules = [
     { id: 1, title: "Module 1: Mastering Generative AI and Advanced Prompting" },
     { id: 2, title: "Module 2: AI for Research, Learning, and Content Creation" },
@@ -13,6 +22,7 @@ export default function useModuleLogic() {
     { id: 5, title: "Module 5: Understanding AI Agents" },
   ];
 
+  // === Submodules for each Module ===
   const subModulesData = {
     1: [
       { id: "1.0", title: "Generative AI: Module Overview" },
@@ -32,21 +42,18 @@ export default function useModuleLogic() {
       { id: "2.0", title: "AI for Productivity: Module Overview" },
       { id: "2.1", title: "AI for Research and Content: Save Time and Effort" },
       { id: "2.2", title: "Using AI for Text Summarization: Techniques and Best Practice" },
-      { id: "2.3", title: "AI for Smarter Writing: Powering Up Word Docs" },
-      { id: "2.4", title: "Activity 1: Advanced Summarization" },
-      { id: "2.5", title: "Supercharge Your Learning with AI: Simplify Complex Topics" },
-      { id: "2.6", title: "AI for Active Learning: Practice, Apply, and Master" },
-      { id: "2.7", title: "AI for Content Creators: Crafting Perfect Texts" },
-      { id: "2.8", title: "AI-Powered Marketing: Unlock the Best Prompts" },
-      { id: "2.9", title: "AI for Voice-Overs: ElevenLabs in Action" },
-      { id: "2.10", title: "Advanced AI Image Creation: Perfecting Prompts" },
-      { id: "2.11", title: "AI Image Generation: Exploring Midjourney" },
-      { id: "2.12", title: "AI Video Creation: Step into Sora" },
-      { id: "2.13", title: "AI Video Editing: Inside Runway ML" },
-      { id: "2.14", title: "Activity 2: Generating and Editing Blog Content" },
+      { id: "2.3", title: "Activity 1: Advanced Summarization" },
+      { id: "2.4", title: "Supercharge Your Learning with AI: Simplify Complex Topics" },
+      { id: "2.5", title: "AI for Active Learning: Practice, Apply, and Master" },
+      { id: "2.6", title: "AI for Content Creators: Crafting Perfect Texts" },
+      { id: "2.7", title: "AI-Powered Marketing: Unlock the Best Prompts" },
+      { id: "2.8", title: "Advanced AI Image Creation: Perfecting Prompts" },
+      { id: "2.9", title: "AI Image Generation: Fine-Tuning & Ethical Practices" },
+      { id: "2.10", title: "Activity 2: Generating and Editing Blog Content" },
     ],
   };
 
+  // === Module Data ===
   const moduleData = {
     1: {
       headline: "Mastering Generative AI and Advanced Prompting",
@@ -60,14 +67,35 @@ export default function useModuleLogic() {
         "Harness the power of AI tools to enhance research, streamline learning, and boost creativity in content production.",
       imageAlt: "AI for Research and Creativity",
     },
-    3: { headline: "Data to Decision: AI-Driven Analytics and Reporting" },
-    4: { headline: "AI-Powered Problem-Solving, Brainstorming, and Prototyping" },
-    5: { headline: "Understanding AI Agents" },
+    3: {
+      headline: "Data to Decision: AI-Driven Analytics and Reporting",
+      description:
+        "Learn how AI transforms data into insights, helping you make smarter, faster decisions.",
+    },
+    4: {
+      headline: "AI-Powered Problem-Solving, Brainstorming, and Prototyping",
+      description:
+        "Explore AI as your creative partner for ideation, innovation, and rapid prototyping.",
+    },
+    5: {
+      headline: "Understanding AI Agents",
+      description:
+        "Get a complete understanding of AI agents and how they automate complex workflows.",
+    },
   };
 
   const currentModule = moduleData[activeModuleId] || moduleData[1];
 
-  // Intersection Observer to track which submodule is visible
+  // === Save state changes to localStorage ===
+  useEffect(() => {
+    localStorage.setItem("activeModuleId", activeModuleId);
+  }, [activeModuleId]);
+
+  useEffect(() => {
+    localStorage.setItem("activeSubmoduleId", activeSubmoduleId);
+  }, [activeSubmoduleId]);
+
+  // === Intersection Observer (for active submodule tracking) ===
   useEffect(() => {
     if (!mainContentRef.current) return;
 
@@ -93,6 +121,7 @@ export default function useModuleLogic() {
     };
   }, [activeModuleId]);
 
+  // === Submodule Click (smooth scroll) ===
   const handleSubmoduleClick = (submoduleId) => {
     setActiveSubmoduleId(submoduleId);
     const element = document.getElementById(`submodule-content-${submoduleId}`);

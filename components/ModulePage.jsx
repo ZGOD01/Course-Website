@@ -21,7 +21,8 @@ import {
   Module1_11,
 } from "../src/modules/Module1";
 
-import { Module2_0, Module2_1 } from "../src/modules/Module2"; // ✅ New Module 2 import
+import { Module2_0, Module2_1, Module2_10, Module2_2, Module2_3, Module2_5, Module2_6, Module2_7, Module2_8, Module2_9 } from "../src/modules/Module2"; 
+import Module2_4 from "../src/modules/Module2/Module2.4";
 
 const ModulePage = () => {
   const location = useLocation();
@@ -72,10 +73,19 @@ const ModulePage = () => {
       return (
         <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-2xl shadow-lg w-full">
           <Module2_0 currentModule={currentModule} />
-          <div className="space-y-14">
+          <div className="space-y-1">
             <Module2_1 currentModule={currentModule} />
-            {/* Add future submodules here as needed */}
+            <Module2_2 currentModule={currentModule} />
+            <Module2_3 currentModule={currentModule} />
+            <Module2_4 currentModule={currentModule} />
+            <Module2_5 currentModule={currentModule} />
+            <Module2_6 currentModule={currentModule} />
+            <Module2_7 currentModule={currentModule} />
+            <Module2_8 currentModule={currentModule} />
+            <Module2_9 currentModule={currentModule} />
+            <Module2_10 currentModule={currentModule} />
           </div>
+          
         </div>
       );
     }
