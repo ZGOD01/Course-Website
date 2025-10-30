@@ -55,7 +55,7 @@ import {
   Module4_6,
   Module4_7,
 } from "../src/modules/Module4";
-import Module4_2 from "../src/modules/Module4/Module4.2";
+import Module4_2 from "../src/modules/Module4/module4.2";
 import { Module5_0 } from "../src/modules/Module5";
 
 // ✅ NEW IMPORT
