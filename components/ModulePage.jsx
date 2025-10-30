@@ -21,8 +21,9 @@ import {
   Module1_11,
 } from "../src/modules/Module1";
 
-import { Module2_0, Module2_1, Module2_10, Module2_2, Module2_3, Module2_5, Module2_6, Module2_7, Module2_8, Module2_9 } from "../src/modules/Module2"; 
+import { Module2_0, Module2_1, Module2_10, Module2_2, Module2_3, Module2_5, Module2_6, Module2_7, Module2_8, Module2_9 } from "../src/modules/Module2";
 import Module2_4 from "../src/modules/Module2/Module2.4";
+import { Module3_0, Module3_1, Module3_2, Module3_3, Module3_4, Module3_5, Module3_6, Module3_7 } from "../src/modules/Module3";
 
 const ModulePage = () => {
   const location = useLocation();
@@ -85,10 +86,29 @@ const ModulePage = () => {
             <Module2_9 currentModule={currentModule} />
             <Module2_10 currentModule={currentModule} />
           </div>
-          
+
         </div>
       );
     }
+
+
+    // ✅ MODULE 3
+    if (activeModuleId === 3) {
+      return (
+        <div className="bg-white p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 rounded-2xl shadow-lg w-full">
+          <Module3_0 currentModule={currentModule} />
+          <Module3_1 currentModule={currentModule} />
+          <Module3_2 currentModule={currentModule} />
+          <Module3_3 currentModule={currentModule} />
+          <Module3_4 currentModule={currentModule} />
+          <Module3_5 currentModule={currentModule} />
+          <Module3_6 currentModule={currentModule} />
+          <Module3_7 currentModule={currentModule} />
+
+        </div>
+      );
+    }
+
 
     // Default Placeholder for future modules
     const activeSubmodule = subModulesData[activeModuleId]?.find(

@@ -51,6 +51,16 @@ export default function useModuleLogic() {
       { id: "2.9", title: "AI Image Generation: Fine-Tuning & Ethical Practices" },
       { id: "2.10", title: "Activity 2: Generating and Editing Blog Content" },
     ],
+    3: [
+      { id: "3.0", title: "AI for Data-Driven Decision-Making: Module Overview" },
+      { id: "3.1", title: "From Data to Decisions: Data Cleaning and Analysis With AI" },
+      { id: "3.2", title: "Data Detective: Using AI for Exploratory Data Analysis" },
+      { id: "3.3", title: "Activity 1: Data Cleaning Dash" },
+      { id: "3.4", title: "From Data to Story: Tailoring Your Narrative" },
+      { id: "3.5", title: "From Data to Story: Visual Storytelling" },
+      { id: "3.6", title: "Presenting Your Data Story: From Report to Impact" },
+      { id: "3.7", title: "Activity 2: Presentation Powerhouse" },
+    ],
   };
 
   // === Module Data ===
@@ -71,6 +81,7 @@ export default function useModuleLogic() {
       headline: "Data to Decision: AI-Driven Analytics and Reporting",
       description:
         "Learn how AI transforms data into insights, helping you make smarter, faster decisions.",
+      imageAlt: "AI Analytics and Data Visualization",
     },
     4: {
       headline: "AI-Powered Problem-Solving, Brainstorming, and Prototyping",
