@@ -5,7 +5,7 @@ const Module3_2 = ({ currentModule }) => {
   return (
     <div id="submodule-content-3.2" className="bg-white p-8 rounded-lg">
       {/* Submodule Heading with Blue Underline */}
-      <h2 className="text-2xl font-bold text-blue-600 pb-2 border-b inline-block mb-6">
+      <h2 className="text-2xl font-semibold text-blue-600 pb-2 border-b inline-block mb-6">
         Data Detective: Using AI for Exploratory Data Analysis
       </h2>
 

@@ -8,7 +8,7 @@ const Module3_3 = () => {
       className="bg-white p-8 rounded-lg  text-gray-800 leading-relaxed"
     >
       {/* === Submodule Heading === */}
-      <h2 className="text-2xl font-bold text-blue-600 pb-2 border-b inline-block mb-6">
+      <h2 className="text-2xl font-semibold text-blue-600 pb-2 border-b inline-block mb-6">
         Activity 1: Data Cleaning Dash
       </h2>
 

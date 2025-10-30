@@ -5,7 +5,7 @@ const Module3_1 = ({ currentModule }) => {
   return (
     <div id="submodule-content-3.1" className="bg-white p-8 rounded-lg">
       {/* Submodule Heading with Blue Underline */}
-      <h2 className="text-2xl font-bold text-blue-600 pb-2 border-b inline-block mb-6">
+      <h2 className="text-2xl font-semibold text-blue-600 pb-2 border-b inline-block mb-6">
         From Data to Decisions: Data Cleaning and Analysis With AI
       </h2>
 

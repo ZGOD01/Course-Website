@@ -36,6 +36,14 @@ import module3_4 from "../assets/module3.4.jpg";
 import module3_5 from "../assets/module3.5.jpg";
 import module3_6 from "../assets/module3.6.jpg";
 
+// ✅ New Module 4 image
+import module4_0 from "../assets/module4.0.jpg";
+import module4_1 from "../assets/module4.1.jpg";
+import module4_2 from "../assets/module4.2.jpg";
+import module4_4 from "../assets/module4.4.jpg";
+import module4_5 from "../assets/module4.5.jpg";
+import module4_6 from "../assets/module4.6.jpg";
+
 export {
   module1,
   submodule2,
@@ -67,5 +75,11 @@ export {
   module3_2,
   module3_4,
   module3_5,
-  module3_6
+  module3_6,
+  module4_0,
+  module4_1,
+  module4_2,
+  module4_4,
+  module4_5,
+  module4_6
 };

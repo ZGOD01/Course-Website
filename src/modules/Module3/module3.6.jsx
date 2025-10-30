@@ -9,7 +9,7 @@ const Module3_6 = () => {
       className="bg-white p-8 rounded-lg mt-6"
     >
       {/* === Submodule Heading === */}
-      <h2 className="text-2xl md:text-3xl font-bold text-blue-700 border-b pb-2 inline-block mb-6">
+      <h2 className="text-2xl md:text-3xl font-semibold text-blue-700 border-b pb-2 inline-block mb-6">
         Presenting Your Data Story: From Report to Impact
       </h2>
 

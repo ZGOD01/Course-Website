@@ -8,7 +8,7 @@ const Module3_7 = () => {
       className="bg-white p-8 rounded-lg text-gray-800 leading-relaxed"
     >
       {/* === Submodule Heading === */}
-      <h2 className="text-2xl md:text-3xl font-bold text-blue-700 border-b pb-2 inline-block mb-6">
+      <h2 className="text-2xl md:text-3xl font-bold text-blue-600 border-b pb-2 inline-block mb-6">
         Activity 2: Presentation Powerhouse
       </h2>
 

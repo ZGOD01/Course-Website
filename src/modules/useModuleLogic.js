@@ -1,3 +1,4 @@
+// src/hooks/useModuleLogic.js
 import { useState, useEffect, useRef } from "react";
 
 export default function useModuleLogic() {
@@ -61,6 +62,19 @@ export default function useModuleLogic() {
       { id: "3.6", title: "Presenting Your Data Story: From Report to Impact" },
       { id: "3.7", title: "Activity 2: Presentation Powerhouse" },
     ],
+    4: [
+      { id: "4.0", title: "AI-Powered Brainstorming and Prototyping: Module Overview" },
+      { id: "4.1", title: "AI for Problem Framing" },
+      { id: "4.2", title: "AI for Problem Solving: The SOLVE Framework" },
+      { id: "4.3", title: "Activity 1: Problem Framer: Using the SOLVE Framework" },
+      { id: "4.4", title: "AI for Brainstorming" },
+      { id: "4.5", title: "AI for Prototyping: From Idea to Wireframe" },
+      { id: "4.6", title: "Refining Prototypes with AI: Testing, Feedback & Iteration" },
+      { id: "4.7", title: "Activity 2: Rapid Prototype - Creating a Basic Interactive Mock-Up" },
+    ],
+    5: [
+      { id: "5.0", title: "Understanding AI Agents: Module Overview" },
+    ],
   };
 
   // === Module Data ===
@@ -86,7 +100,8 @@ export default function useModuleLogic() {
     4: {
       headline: "AI-Powered Problem-Solving, Brainstorming, and Prototyping",
       description:
-        "Explore AI as your creative partner for ideation, innovation, and rapid prototyping.",
+        "Explore how AI enhances creativity, guides structured problem-solving, and speeds up the design-to-prototype journey.",
+      imageAlt: "AI-Powered Brainstorming and Prototyping",
     },
     5: {
       headline: "Understanding AI Agents",
